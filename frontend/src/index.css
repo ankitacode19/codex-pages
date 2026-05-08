@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:        #f0f4f8;
+  --panel:     #ffffff;
+  --border:    #e2e8f0;
+  --accent:    #0891b2;
+  --accent-dim:#0e7490;
+  --green:     #16a34a;
+  --red:       #dc2626;
+  --yellow:    #d97706;
+  --purple:    #7c3aed;
+  --text:      #1e293b;
+  --muted:     #64748b;
+  color-scheme: light;
+}
+
+:root.dark {
+  --bg:        #0d0f14;
+  --panel:     #13161e;
+  --border:    #1e2330;
+  --accent:    #00d9ff;
+  --accent-dim:#00a8c8;
+  --green:     #00e676;
+  --red:       #ff4569;
+  --yellow:    #ffcc00;
+  --purple:    #b388ff;
+  --text:      #c9d1e0;
+  --muted:     #5a6480;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.bg-lab-bg      { background-color: var(--bg) !important; }
+.bg-lab-panel   { background-color: var(--panel) !important; }
+.bg-lab-border  { background-color: var(--border) !important; }
+.bg-lab-accent  { background-color: var(--accent) !important; }
+.bg-lab-accent-dim { background-color: var(--accent-dim) !important; }
+.bg-lab-green   { background-color: var(--green) !important; }
+.bg-lab-red     { background-color: var(--red) !important; }
+.bg-lab-yellow  { background-color: var(--yellow) !important; }
+
+.text-lab-text    { color: var(--text) !important; }
+.text-lab-muted   { color: var(--muted) !important; }
+.text-lab-accent  { color: var(--accent) !important; }
+.text-lab-green   { color: var(--green) !important; }
+.text-lab-red     { color: var(--red) !important; }
+.text-lab-yellow  { color: var(--yellow) !important; }
+.text-lab-bg      { color: var(--bg) !important; }
+
+.border-lab-border  { border-color: var(--border) !important; }
+.border-lab-accent  { border-color: var(--accent) !important; }
+.border-lab-red     { border-color: var(--red) !important; }
+.border-lab-green   { border-color: var(--green) !important; }
+
+/* Opacity variants */
+.bg-lab-accent\/10  { background-color: color-mix(in srgb, var(--accent) 10%, transparent) !important; }
+.bg-lab-accent\/15  { background-color: color-mix(in srgb, var(--accent) 15%, transparent) !important; }
+.bg-lab-green\/10   { background-color: color-mix(in srgb, var(--green) 10%, transparent) !important; }
+.bg-lab-green\/20   { background-color: color-mix(in srgb, var(--green) 20%, transparent) !important; }
+.bg-lab-red\/10     { background-color: color-mix(in srgb, var(--red) 10%, transparent) !important; }
+.bg-lab-yellow\/10  { background-color: color-mix(in srgb, var(--yellow) 10%, transparent) !important; }
+.border-lab-accent\/30 { border-color: color-mix(in srgb, var(--accent) 30%, transparent) !important; }
+.border-lab-accent\/50 { border-color: color-mix(in srgb, var(--accent) 50%, transparent) !important; }
+.border-lab-accent\/60 { border-color: color-mix(in srgb, var(--accent) 60%, transparent) !important; }
+.border-lab-red\/40    { border-color: color-mix(in srgb, var(--red) 40%, transparent) !important; }
+.border-lab-green\/40  { border-color: color-mix(in srgb, var(--green) 40%, transparent) !important; }
+.border-lab-yellow\/30 { border-color: color-mix(in srgb, var(--yellow) 30%, transparent) !important; }
+.hover\:bg-lab-accent\/10:hover  { background-color: color-mix(in srgb, var(--accent) 10%, transparent) !important; }
+.hover\:border-lab-accent\/50:hover { border-color: color-mix(in srgb, var(--accent) 50%, transparent) !important; }
+.hover\:border-lab-red\/40:hover { border-color: color-mix(in srgb, var(--red) 40%, transparent) !important; }
+.hover\:text-lab-accent:hover { color: var(--accent) !important; }
+.hover\:text-lab-text:hover   { color: var(--text) !important; }
+.hover\:text-lab-red:hover    { color: var(--red) !important; }
+.hover\:bg-lab-border:hover   { background-color: var(--border) !important; }
+.hover\:bg-lab-accent-dim:hover { background-color: var(--accent-dim) !important; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--panel); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+.monaco-editor .margin { background: transparent !important; }
+.monaco-editor, .monaco-editor-background { background: transparent !important; }
+
+.resizer {
+  width: 4px;
+  background: var(--border);
+  cursor: col-resize;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.resizer:hover, .resizer.active { background: var(--accent); }
+@keyframes fadeIn   { from { opacity: 0 } to { opacity: 1 } }
+@keyframes slideIn  { from { transform: translateX(-10px); opacity: 0 } to { transform: translateX(0); opacity: 1 } }
+@keyframes pulseDot { 0%,100% { opacity: 1 } 50% { opacity: 0.3 } }
+
+.animate-fade-in   { animation: fadeIn 0.2s ease-out; }
+.animate-slide-in  { animation: slideIn 0.25s ease-out; }
+.animate-pulse-dot { animation: pulseDot 1.5s ease-in-out infinite; }
