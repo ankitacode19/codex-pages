@@ -8,6 +8,8 @@ Codex Pages gives you a Monaco-powered editor (the same one used in VS Code) pai
 
 Signed-in users can save snippets to their account, manage them from the sidebar, and generate shareable links that anyone can open without logging in.
 
+# [Check it out](https://codex-pages.vercel.app)
+
 ## Stack
 
 - **Frontend** — React, Vite, Tailwind CSS, Monaco Editor
